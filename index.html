@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kennaline</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
+                <img src="assets/images/movil/Kennaline Movil_menu_hamburguesa.png" alt="Menú" class="hamburger-icon" />
+            </button>
+            <div class="logo-container">
+                <img src="assets/images/Kennaline Web_logo.png" alt="Kennaline Logo" class="logo-img" />
+            </div>
+            <nav class="main-nav">
+                <div class="nav-menu-wrapper">
+                    <a href="/nosotros" class="nav-link-area nav-link-nosotros">
+                        <img src="assets/images/Kennaline Web_navbar_nosotros.png" alt="Nosotros" />
+                    </a>
+                    <a href="/productos" class="nav-link-area nav-link-productos">
+                        <img src="assets/images/Kennaline Web_navbar_productos.png" alt="Productos" />
+                    </a>
+                    <a href="/servicios" class="nav-link-area nav-link-servicios">
+                        <img src="assets/images/Kennaline Web_navbar_servicios.png" alt="Servicios" />
+                    </a>
+                    <a href="/soluciones" class="nav-link-area nav-link-soluciones">
+                        <img src="assets/images/Kennaline Web_navbar_soluciones.png" alt="Soluciones" />
+                    </a>
+                    <a href="/clientes" class="nav-link-area nav-link-clientes">
+                        <img src="assets/images/Kennaline Web_navbar_clientes.png" alt="Clientes" />
+                    </a>
+                    <a href="#contacto" class="nav-link-area nav-link-contacto">
+                        <img src="assets/images/Kennaline Web_navbar_contacto.png" alt="Contacto" />
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menú móvil -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-background"></div>
+        <div class="mobile-menu-content">
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">×</button>
+            <ul class="mobile-menu-list">
+                <li><a href="nosotros/" class="mobile-menu-link">
+                    <img src="assets/images/Kennaline Web_navbar_nosotros.png" alt="Nosotros" />
+                </a></li>
+                <li><a href="productos/" class="mobile-menu-link">
+                    <img src="assets/images/Kennaline Web_navbar_productos.png" alt="Productos" />
+                </a></li>
+                <li><a href="servicios/" class="mobile-menu-link">
+                    <img src="assets/images/Kennaline Web_navbar_servicios.png" alt="Servicios" />
+                </a></li>
+                <li><a href="soluciones/" class="mobile-menu-link">
+                    <img src="assets/images/Kennaline Web_navbar_soluciones.png" alt="Soluciones" />
+                </a></li>
+                <li><a href="clientes/" class="mobile-menu-link">
+                    <img src="assets/images/Kennaline Web_navbar_clientes.png" alt="Clientes" />
+                </a></li>
+                <li><a href="#contacto" class="mobile-menu-link">
+                    <img src="assets/images/Kennaline Web_navbar_contacto.png" alt="Contacto" />
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="assets/images/Kennaline Web_slogan_home.png" alt="Slogan" class="hero-slogan-img" />
+        </div>
+    </main>
+
+    <div id="contacto" class="contacto">
+        <div class="contacto-bg"></div>
+        <div class="contacto-content">
+            <div class="contacto-banner-wrapper">
+                <div class="contacto-banner">
+                    <div class="contacto-text"></div>
+                </div>                    
+            </div>
+            <div class="contacto-datos"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p class="footer-copyright text-body">© 2025 Kennaline. Todos los derechos reservados.</p>
+            <div class="footer-logo"></div>
+        </div>
+    </footer>
+
+    <script src="mobile-menu.js"></script>
+</body>

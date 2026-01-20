@@ -1,0 +1,320 @@
+/* Estilos específicos para la página de Nosotros */
+
+/* Ajuste de ruta para el menú móvil desde subcarpetas */
+.mobile-menu-background {
+  background-image: url('../assets/images/movil/Kennaline Movil_menu_background.png');
+}
+
+.page-content {
+  width: 100%;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 78px;
+  width: 100%;
+}
+
+.logo-img {
+  height: 50px;
+}
+
+
+
+.main-nav {
+  top: 0;
+}
+
+/* Hero Section 1 */
+.hero {
+  width: 100%;
+  min-height: 768px;
+  height: calc(100svh - 147px);
+  position: relative;
+  overflow: visible;
+}
+
+.hero-background {
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero_background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero-overlay {
+  opacity: 0.6;
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero_background_overlay.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+.hero-banner-top-left-wrapper {
+  position: absolute;
+  display: flex;
+  top: 120px;
+  width: 414px;
+  height: 104px;
+}
+
+.hero-banner-top-left {
+  display: flex;
+  align-items: center;
+  left: 0;
+  width: 414px;
+  height: 104px;
+  padding-left: 82.5px;
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero_banner_top_left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-banner-top-left-text {
+  width: 220px;
+  height: 42px;
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero_banner_top_left_text.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hero-banner-center-bottom-wrapper {
+  position: absolute;
+  bottom: -69px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 138px;
+  z-index: 3;
+}
+
+.hero-banner-center-bottom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  height: 138px;
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero_banner_center_bottom.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hero-banner-center-bottom-text {
+  width: 864px;
+  height: 45px;
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero_banner_center_bottom_text.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Hero Section 2 */
+.hero2 {
+  width: 100%;
+  min-height: 768px;
+  height: 90svh;
+}
+
+.hero2-content {
+  display: flex;
+  padding: 150px clamp(50px, 6vw, 150px);
+  min-height: 768px;
+  height: 90svh;
+  width: 100%;
+}
+
+.hero2-text {
+  flex: 1;
+  height: 100%;
+  max-height: 548px;
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero2_text.png');
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+/* Hero Section 3 */
+.hero3 {
+  position: relative;
+  width: 100%;
+  min-height: 768px;
+  height: 90svh;
+}
+
+.hero3-content {
+  border: 120px solid black;
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero3_content.png');
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 768px;
+  height: 100%;  
+}
+
+.hero3-banner-left-bottom-wrapper {
+  position: absolute;
+  bottom: 58px;
+  left: 197px;
+  width: clamp(400px, 50vw, 924px);
+  height: 116px;
+}
+
+.hero3-banner-left-bottom {
+  width: clamp(400px, 50vw, 924px);
+  height: 100%;
+  background-image: url('../assets/images/nosotros/Kennaline Web_hero3_banner_left_bottom.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mobile-menu-content {
+  padding: 80px 20px 20px;
+}
+
+.mobile-menu-close {
+  top: 15px;
+}
+
+.logo-container img {
+  height: 50px;
+}
+
+/* Responsive - Imágenes móviles */
+@media (max-width: 1080px) {
+
+  .hero {
+    aspect-ratio: 1080/863;
+    height: auto;
+    min-height: 0px;
+  }
+
+  .hero-background {
+    background-image: url('../assets/images/nosotros/movil/Kennaline Web_hero_background_movil.png');
+  }
+  
+  
+  .hero2-text {
+    background-image: url('../assets/images/nosotros/movil/Kennaline Web_hero2_text.png');
+  }
+  
+  .hero3-content {
+    background-image: url('../assets/images/nosotros/movil/Kennaline Web_hero3_content.png');
+  }
+
+  .hero-overlay,
+  .hero-banner-top-left-wrapper,
+  .hero-banner-center-bottom-text {
+    display: none;
+  }
+
+  /* Ajustes del banner center-bottom para móvil */
+  .hero-banner-center-bottom-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    min-height: 138px;
+    bottom: -69px;
+  }
+
+  .hero-banner-center-bottom {
+    width: 100%;
+    height: auto;
+    min-height: 138px;
+    aspect-ratio: 1000/138;
+    background-image: url('../assets/images/nosotros/movil/Kennaline Web_hero_banner_center_bottom_movil.png');
+  }
+
+  /* Reducir padding del hero2-content en móvil */
+
+  .hero2 {
+    height: 140svh;
+    aspect-ratio: 1080/1620;
+    height: auto;
+    min-height: 0px;
+  }
+
+  .hero2-content {
+    padding: 100px 40px 80px 40px;
+    height: 100%;
+  }
+
+  .hero2-text {
+    max-height: none;
+  }
+
+  /* Reducir border del hero3-content en móvil */
+  .hero3 {
+    height: 140svh;
+    aspect-ratio: 1080/1482;
+    height: auto;
+    min-height: 0px;
+  }
+
+  .hero3-content {
+    border: 100px solid black;
+  }
+
+  .hero3-banner-left-bottom-wrapper {
+    position: absolute;
+    top: -37px;
+    left: 0;
+    width: auto;
+    height: 74px;
+    aspect-ratio: 924/116;
+    max-width: min(924px, 70vw);
+  }
+  
+  .hero3-banner-left-bottom {
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/nosotros/Kennaline Web_hero3_banner_left_bottom.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }  
+}
+
+@media (max-width: 768px) {
+  .hero2 {
+    height: 100%;
+    min-height: 0px;
+  }
+
+  .hero2-content {
+    padding: 100px 40px 80px 40px;
+    height: 100%;
+    min-height: 0px;
+  }
+
+  .hero2-text {
+    height: 100%;
+    min-height: 0px;
+  }
+
+  .hero3 {
+    height: 100%;
+    min-height: 0px;
+  }
+
+  .hero3-content {
+    border: 20px solid black;
+    height: 100%;
+    min-height: 0px;
+  }
+}
+

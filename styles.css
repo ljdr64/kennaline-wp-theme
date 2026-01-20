@@ -1,0 +1,495 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.main-header {
+  width: 100%;
+  background-image: url('assets/images/Kennaline Web_fondo_header.png');
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 180px;
+  width: 100%;
+}
+
+.logo-container {
+  /* width: 250.5px; */
+  /* height: 62.25px; */
+  padding-left: 82.5px;
+}
+
+.logo-container img {
+  height: 62px;
+}
+
+.main-nav {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/images/Kennaline Web_fondo_navbar.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1070.25px;
+  height: 78px;
+  right: 0;
+  top: 141.75px;
+}
+
+.nav-menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  height: 21px;
+}
+
+.nav-link-area {
+  height: 21px;
+  cursor: pointer;
+}
+
+.nav-link-area img {
+  height: 21px;
+  width: auto;
+  display: block;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  width: 100%;
+  height: calc(100svh - 180px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/images/Kennaline Web_image_home.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 762px;
+  height: 100%;
+  z-index: 3;
+}
+
+.hero-slogan-img {
+  width: 762px;
+  height: 375px;
+  padding-left: 82.5px;
+}
+
+.contacto {
+  position: relative;
+  width: 100%;
+  height: 466.5px;
+}
+
+.contacto-bg {
+  width: 100%;
+  height: 466.5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/images/contacto/Kennaline Web_footer_fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.contacto-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 466.5px;
+  position: relative;
+  z-index: 1;
+  gap: 67.5px;
+}
+
+.contacto-banner-wrapper {
+  position: relative;
+  width: 460.5px;
+  height: 103.5px;
+}
+
+.contacto-banner {
+  display: flex;
+  align-items: center;
+  width: 460.5px;
+  height: 103.5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('assets/images/contacto/Kennaline Web_footer_fondo_contacto.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.contacto-text {
+  width: 207.75px;
+  height: 41.25px;
+  margin-left: 116.25px;
+  background-image: url('assets/images/contacto/Kennaline Web_footer_contacto.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.contacto-datos {
+  width: 461.25px;
+  height: 126px;
+  margin-left: 116.25px;
+  background-image: url('assets/images/contacto/Kennaline Web_footer_datos.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+footer {
+  width: 100%;
+  height: 88px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.48%;
+  width: 100%;
+  height: 73.86%;
+}
+
+.footer-logo {
+  width: 233px;
+  height: 57px;
+  background: transparent url("assets/images/Logo Spuches Horizontal.png")
+  center/contain no-repeat;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+/* Botón hamburguesa - oculto por defecto */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-btn .hamburger-icon {
+  width: 36px;
+  height: 25px;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  transform-origin: center center;
+  object-fit: contain;
+}
+
+/* El botón hamburguesa se mantiene igual cuando el menú está abierto */
+
+/* Menú móvil */
+.mobile-menu-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+.mobile-menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  max-width: 400px;
+  height: 100%;
+  z-index: 999;
+  transition: left 0.3s ease, visibility 0s linear 0.3s;
+  visibility: hidden;
+}
+
+.mobile-menu.active {
+  left: 0;
+  visibility: visible;
+  transition: left 0.3s ease, visibility 0s linear 0s;
+}
+
+.mobile-menu-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/images/movil/Kennaline Movil_menu_background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.mobile-menu-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 180px 20px 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  color: #000;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 2;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-menu-list li {
+  border-bottom: 1px solid #000;
+}
+
+.mobile-menu-list li:first-child {
+  border-top: 1px solid #000;
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-link img {
+  height: 21px;
+  width: auto;
+  display: block;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive - Menú móvil para pantallas menores a 1400px */
+@media (max-width: 1400px) {
+  /* Mostrar botón hamburguesa */
+  .hamburger-btn {
+    display: flex;
+    padding-left: 20px;
+    order: 1;
+  }
+
+  /* Ocultar menú principal */
+  .main-nav {
+    display: none;
+  }
+
+  /* Ajustes del header para móvil */
+  .header-container {
+    height: 180px;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .logo-container {
+    padding-left: 0;
+    padding-right: 30px;
+    order: 2;
+  }
+}
+
+@media (max-width: 1080px) {
+  /* Ajustes del hero para móvil */
+  .hero-content {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .hero-slogan-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding-left: 0;
+  }
+
+  .contacto-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 466.5px;
+    position: relative;
+    z-index: 1;
+    gap: 67.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacto {
+    position: relative;
+    width: 100%;
+    height: 311px;
+  }
+  
+  .contacto-bg {
+    width: 100%;
+    height: 311px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('assets/images/contacto/Kennaline Web_footer_fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+  
+  .contacto-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 311px;
+    position: relative;
+    z-index: 1;
+    gap: 45px;
+  }
+  
+  .contacto-banner-wrapper {
+    position: relative;
+    width: 307px;
+    height: 69px;
+  }
+  
+  .contacto-banner {
+    display: flex;
+    align-items: center;
+    width: 307px;
+    height: 69px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('assets/images/contacto/Kennaline Web_footer_fondo_contacto.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  
+  .contacto-text {
+    width: 138.5px;
+    height: 27.5px;
+    margin-left: 77.5px;
+    background-image: url('assets/images/contacto/Kennaline Web_footer_contacto.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+  
+  .contacto-datos {
+    margin-left: 77.5px;
+    margin-right: 20px;
+    max-width: 307.5px;
+    max-height: 84px;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 307.5 / 84;
+    background-image: url('assets/images/contacto/Kennaline Web_footer_datos.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

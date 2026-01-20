@@ -1,0 +1,864 @@
+/* Estilos específicos para la página de Productos */
+
+/* Ajuste de ruta para el menú móvil desde subcarpetas */
+.mobile-menu-background {
+  background-image: url('../assets/images/movil/Kennaline Movil_menu_background.png');
+}
+
+.page-content {
+  width: 100%;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 78px;
+  width: 100%;
+}
+
+.logo-img {
+  height: 50px;
+}
+
+
+
+.main-nav {
+  top: 0;
+}
+
+/* Hero Section 1 */
+.hero {
+  width: 100%;
+  min-height: 768px;
+  height: calc(100svh - 147px);
+  position: relative;
+  overflow: visible;
+}
+
+.hero-background {
+  z-index: 1;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  opacity: 0.6;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_background_overlay.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+.hero-banner-top-left-wrapper {
+  position: absolute;
+  display: flex;
+  top: 120px;
+  width: 454px;
+  height: 104px;
+}
+
+.hero-banner-top-left {
+  display: flex;
+  align-items: center;
+  left: 0;
+  width: 454px;
+  height: 104px;
+  padding-left: 82.5px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_banner_top_left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-banner-top-left-text {
+  width: 244px;
+  height: 42px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_banner_top_left_text.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hero-banner-center-bottom-wrapper {
+  position: absolute;
+  bottom: -69px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 138px;
+  z-index: 3;
+}
+
+.hero-banner-center-bottom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  height: 138px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_banner_center_bottom.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hero-banner-center-bottom-text {
+  width: 864px;
+  height: 45px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_banner_center_bottom_text.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Menú lateral derecho */
+.hero-menu-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+.hero-menu-right-item {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.hero-menu-right-item:hover {
+  opacity: 0.8;
+}
+
+.hero-menu-right-perforado-bg {
+  width: 244px;
+  height: 41px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_menu_right_perforado.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-menu-right-fresado-bg {
+  display: block;
+  width: 244px;
+  height: 41px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_menu_right_fresado.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-menu-right-torneado-bg {
+  display: block;
+  width: 244px;
+  height: 41px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_menu_right_torneado.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-menu-right-roscado-bg {
+  display: block;
+  width: 244px;
+  height: 41px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_menu_right_roscado.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-menu-right-repuestos-bg {
+  display: block;
+  width: 244px;
+  height: 41px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_menu_right_repuestos.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-menu-right-separador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-menu-right-separador-bg {
+  display: block;
+  width: 459px;
+  height: 4px;
+  background-image: url('../assets/images/productos/Kennaline Web_hero_menu_right_separador.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hero Section 2 - Perforado */
+.hero2 {
+  width: 100%;
+  padding: 100px 0px 40px 80px;
+  position: relative;
+}
+
+.hero2-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1780/757;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero2-content-center {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  max-height: 600px;
+  background-image: url('../assets/images/productos/perforado/Kennaline Web_hero2_content_center.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero2-nav-link {
+  position: absolute;
+  width: 52%;
+  left: 48%;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.hero2-nav-link:hover {
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.hero2-nav-link-1-right {
+  top: 0%;
+  height: 43.5%;
+}
+
+.hero2-nav-link-2-right {
+  top: 43.5%;
+  height: 27%;
+}
+
+.hero2-nav-link-3-right {
+  top: 70.5%;
+  height: 29.5%;
+}
+
+/* Hero Section 3 - Fresado */
+.hero3 {
+  width: 100%;
+  padding: 40px 0px 40px 80px;
+  position: relative;
+  overflow: visible;
+}
+
+.hero3-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/productos/fresado/Kennaline Web_hero3_background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero3-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-image: url('../assets/images/productos/fresado/Kennaline Web_hero3_background_overlay.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+.hero3-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1780/757;
+  width: 100%;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.hero3-content-center {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  max-height: 600px;
+  background-image: url('../assets/images/productos/fresado/Kennaline Web_hero3_content_center.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero3-nav-link {
+  position: absolute;
+  width: 51%;
+  left: 49%;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.hero3-nav-link:hover {
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.hero3-nav-link-1-right {
+  top: 0%;
+  height: 29.5%;
+}
+
+.hero3-nav-link-2-right {
+  top: 29.5%;
+  height: 26%;
+}
+
+.hero3-nav-link-3-right {
+  top: 55.5%;
+  height: 24.5%;
+}
+
+.hero3-nav-link-4-right {
+  top: 80%;
+  height: 20%;
+}
+
+/* Hero Section 4 - Torneado */
+.hero4 {
+  width: 100%;
+  padding: 40px 0px 40px 80px;
+  position: relative;
+}
+
+.hero4-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1780/757;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero4-content-center {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  max-height: 600px;
+  background-image: url('../assets/images/productos/torneado/Kennaline Web_hero4_content_center.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero4-nav-link {
+  position: absolute;
+  width: 51%;
+  left: 49%;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.hero4-nav-link:hover {
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.hero4-nav-link-1-right {
+  top: 0%;
+  height: 23.2%;
+}
+
+.hero4-nav-link-2-right {
+  top: 23.2%;
+  height: 27.3%;
+}
+
+.hero4-nav-link-3-right {
+  top: 50.5%;
+  height: 25.5%;
+}
+
+.hero4-nav-link-4-right {
+  top: 76%;
+  height: 24%;
+}
+
+/* Hero Section 5 - Roscado */
+.hero5 {
+  width: 100%;
+  padding: 40px 0px 40px 80px;
+  position: relative;
+  overflow: visible;
+}
+
+.hero5-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/productos/roscado/Kennaline Web_hero5_background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero5-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-image: url('../assets/images/productos/roscado/Kennaline Web_hero5_background_overlay.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+.hero5-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1780/757;
+  width: 100%;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.hero5-content-center {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  max-height: 600px;
+  background-image: url('../assets/images/productos/roscado/Kennaline Web_hero5_content_center.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero5-nav-link {
+  position: absolute;
+  width: 51%;
+  left: 49%;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.hero5-nav-link:hover {
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.hero5-nav-link-1-right {
+  top: 0%;
+  height: 35%;
+}
+
+.hero5-nav-link-2-right {
+  top: 35%;
+  height: 28%;
+}
+
+.hero5-nav-link-3-right {
+  top: 63%;
+  height: 37%;
+}
+
+/* Hero Section 6 - Repuestos */
+.hero6 {
+  width: 100%;
+  min-height: 768px;
+  height: 90svh;
+  position: relative;
+  overflow: visible;
+}
+
+.hero6-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/productos/repuestos/Kennaline Web_hero6_background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero6-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-image: url('../assets/images/productos/repuestos/Kennaline Web_hero6_background_overlay.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+.hero6-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 768px;
+  height: 90svh;
+  width: 100%;
+  z-index: 3;
+}
+
+.hero6-content-right {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/productos/repuestos/Kennaline Web_hero6_content_right.png');
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.mobile-menu-content {
+  padding: 80px 20px 20px;
+}
+
+.mobile-menu-close {
+  top: 15px;
+}
+
+.logo-container img {
+  height: 50px;
+}
+
+/* Responsive - Imágenes móviles */
+@media (max-width: 1080px) {
+
+  /* Hero Section 1 */
+  .hero {
+    aspect-ratio: 1080/863;
+    height: auto;
+    min-height: 0px;
+  }
+
+  .hero-background {
+    background-image: url('../assets/images/productos/movil/Kennaline Web_hero_background.png');
+  }
+
+  .hero-overlay,
+  .hero-banner-top-left-wrapper,
+  .hero-banner-center-bottom-text {
+    display: none;
+  }
+
+  .hero-menu-right {
+    aspect-ratio: 459/381;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    gap: 2svw;
+  }
+
+  .hero-menu-right-perforado-bg,
+  .hero-menu-right-fresado-bg,
+  .hero-menu-right-torneado-bg,
+  .hero-menu-right-roscado-bg,
+  .hero-menu-right-repuestos-bg {
+    width: 22svw;
+    height: auto;
+    aspect-ratio: 244 / 41;
+  }
+
+  .hero-menu-right-separador-bg {
+    width: 40svw;
+    aspect-ratio: 459 / 4;
+  }
+
+  /* Ajustes del banner center-bottom para móvil */
+  .hero-banner-center-bottom-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    min-height: 138px;
+    bottom: -69px;
+  }
+
+  .hero-banner-center-bottom {
+    width: 100%;
+    height: auto;
+    min-height: 138px;
+    aspect-ratio: 1000/138;
+    background-image: url('../assets/images/productos/movil/Kennaline Web_hero_banner_center_bottom.png');
+  }
+
+  .hero2 {
+    padding: 100px 40px 80px 40px;
+    height: auto;
+  }
+  .hero3, .hero4, .hero5 {
+    padding: 80px 40px;
+    height: auto;
+  }
+
+  .hero2-content,
+  .hero3-content,
+  .hero4-content,
+  .hero5-content{
+    min-height: 0px;    
+  }
+
+  .hero2-content-center,
+  .hero3-content-center,
+  .hero4-content-center,
+  .hero5-content-center{
+    position: relative;
+    height: auto;    
+    max-height: none;    
+  }
+
+  /* Hero Section 2 - Perforado */
+  .hero2-content {
+    aspect-ratio: 843/1111;
+    height: auto;
+  }
+
+  .hero2-content-center {
+    position: relative;
+    background-image: url('../assets/images/productos/perforado/movil/Kennaline Web_hero2_content_center.png');
+    height: 100%;
+    max-height: none;
+  }
+
+  .hero2-nav-link {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hero2-nav-link:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+  }
+
+  .hero2-nav-link-1-right {
+    top: 57.9%;
+    height: 19%;
+  }
+
+  .hero2-nav-link-2-right {
+    top: 76.6%;
+    height: 14.8%;
+  }
+
+  .hero2-nav-link-3-right {
+    top: 91%;
+    height: 12%;
+  }
+
+  /* Hero Section 3 - Fresado */
+  .hero3-background {
+    background-image: url('../assets/images/productos/fresado/movil/Kennaline Web_hero3_background.png');
+  }
+
+  .hero3-overlay {
+    background-image: url('../assets/images/productos/fresado/movil/Kennaline Web_hero3_background_overlay.png');
+  }
+
+  .hero3-content {
+    aspect-ratio: 843/1276;
+    height: auto;
+  }
+
+  .hero3-content-center {
+    position: relative;
+    background-image: url('../assets/images/productos/fresado/movil/Kennaline Web_hero3_content_center.png');
+    height: 100%;
+    max-height: none;
+  }
+
+  .hero3-nav-link {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hero3-nav-link:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+  }
+
+  .hero3-nav-link-1-right {
+    top: 47%;
+    height: 15%;
+  }
+
+  .hero3-nav-link-2-right {
+    top: 62%;
+    height: 14%;
+  }
+
+  .hero3-nav-link-3-right {
+    top: 76%;
+    height: 13%;
+  }
+
+  .hero3-nav-link-4-right {
+    top: 89%;
+    height: 12%;
+  }
+
+  /* Hero Section 4 - Torneado */
+  .hero4-content {
+    aspect-ratio: 843/1438;
+    height: auto;
+  }
+
+  .hero4-content-center {
+    position: relative;
+    background-image: url('../assets/images/productos/torneado/movil/Kennaline Web_hero4_content_center.png');
+    height: 100%;
+    max-height: none;
+  }
+
+  .hero4-nav-link {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hero4-nav-link:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+  }
+
+  .hero4-nav-link-1-right {
+    top: 52%;
+    height: 13.5%;
+  }
+
+  .hero4-nav-link-2-right {
+    top: 65.5%;
+    height: 13.1%;
+  }
+
+  .hero4-nav-link-3-right {
+    top: 78.6%;
+    height: 12.1%;
+  }
+
+  .hero4-nav-link-4-right {
+    top: 90.7%;
+    height: 11%;
+  }
+
+  /* Hero Section 5 - Roscado */
+  .hero5-background {
+    background-image: url('../assets/images/productos/roscado/movil/Kennaline Web_hero5_background.png');
+  }
+
+  .hero5-overlay {
+    background-image: url('../assets/images/productos/roscado/movil/Kennaline Web_hero5_background_overlay.png');
+  }
+
+  .hero5-content {
+    aspect-ratio: 843/1287;
+    height: auto;
+  }
+
+  .hero5-content-center {
+    position: relative;
+    background-image: url('../assets/images/productos/roscado/movil/Kennaline Web_hero5_content_center.png');
+    height: 100%;
+    max-height: none;
+  }
+
+  .hero5-nav-link {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hero5-nav-link:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+  }
+
+  .hero5-nav-link-1-right {
+    top: 53%;
+    height: 16.5%;
+  }
+
+  .hero5-nav-link-2-right {
+    top: 69.5%;
+    height: 16.5%;
+  }
+
+  .hero5-nav-link-3-right {
+    top: 86%;
+    height: 17%;
+  }
+
+  /* Hero Section 6 - Repuestos */
+  .hero6-background {
+    background-image: url('../assets/images/productos/repuestos/movil/Kennaline Web_hero6_background.png');
+  }
+
+  .hero6-overlay {
+    background-image: url('../assets/images/productos/repuestos/movil/Kennaline Web_hero6_background_overlay.png');
+  }
+
+  .hero6-content {
+    justify-content: center;
+  }
+
+  .hero6-content-right {
+    background-image: url('../assets/images/productos/repuestos/movil/Kennaline Web_hero6_content_right.png');
+    background-position: center center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero2, .hero3, .hero4, .hero5, .hero6 {
+    padding: 50px 20px 20px 20px;
+    }
+}
