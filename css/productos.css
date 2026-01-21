@@ -858,7 +858,7 @@
 }
 
 @media (max-width: 480px) {
-  .hero2, .hero3, .hero4, .hero5, .hero6 {
+  .hero2, .hero3, .hero4, .hero5 {
     padding: 50px 20px 20px 20px;
     }
 }
