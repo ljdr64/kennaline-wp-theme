@@ -4,6 +4,18 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <?php
+    // Precargar todas las fuentes para mejor rendimiento
+    $font_dir = get_template_directory_uri() . '/assets/fonts/';
+    ?>
+    <link rel="preload" href="<?php echo $font_dir; ?>SairaCondensed-Light.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="<?php echo $font_dir; ?>SairaCondensed-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="<?php echo $font_dir; ?>SairaCondensed-Medium.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="<?php echo $font_dir; ?>SairaCondensed-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="<?php echo $font_dir; ?>SairaCondensed-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="<?php echo $font_dir; ?>SairaCondensed-ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="<?php echo $font_dir; ?>SairaCondensed-Italic.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="<?php echo $font_dir; ?>SairaCondensed-BoldItalic.ttf" as="font" type="font/ttf" crossorigin>
     <?php wp_head(); ?>
 </head>
 
