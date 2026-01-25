@@ -113,6 +113,15 @@ function kennaline_page_styles() {
             '1.0'
         );
     }
+
+    if (is_page('fresas-integrales-metal-duro')) {
+        wp_enqueue_style(
+            'fresas-integrales-metal-duro-style',
+            get_template_directory_uri() . '/css/fresas-integrales-metal-duro.css',
+            ['kennaline-main-style'], // Dependencia: se carga después del CSS principal
+            '1.0'
+        );
+    }
     
     if (is_page('servicios')) {
         wp_enqueue_style(

@@ -1,0 +1,284 @@
+/* Estilos específicos para la página de Fresas Integrales de Metal Duro */
+
+/* Ajuste de ruta para el menú móvil desde subcarpetas */
+.mobile-menu-background {
+    background-image: url('../assets/images/movil/Kennaline Movil_menu_background.png');
+  }
+  
+  .page-content {
+    width: 100%;
+    position: relative;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 78px;
+    width: 100%;
+  }
+  
+  .logo-img {
+    height: 50px;
+  }
+  
+  .logo-container img {
+    height: 50px;
+  }
+  
+  .main-nav {
+    top: 0;
+  }
+  
+  .mobile-menu-content {
+    padding: 80px 20px 20px;
+  }
+  
+  .mobile-menu-close {
+    top: 15px;
+  }
+  
+  
+  /* Estilos del menú móvil - rutas ajustadas desde subcarpeta */
+  .mobile-menu-link-nosotros {
+    width: 100%;
+    height: 21px;
+    background-image: url('../assets/images/Kennaline Web_navbar_nosotros.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+  
+  .mobile-menu-link-productos {
+    width: 100%;
+    height: 21px;
+    background-image: url('../assets/images/Kennaline Web_navbar_productos.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+  
+  .mobile-menu-link-servicios {
+    width: 100%;
+    height: 21px;
+    background-image: url('../assets/images/Kennaline Web_navbar_servicios.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+  
+  .mobile-menu-link-soluciones {
+    width: 100%;
+    height: 21px;
+    background-image: url('../assets/images/Kennaline Web_navbar_soluciones.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+  
+  .mobile-menu-link-clientes {
+    width: 100%;
+    height: 21px;
+    background-image: url('../assets/images/Kennaline Web_navbar_clientes.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+  
+  .mobile-menu-link-contacto {
+    width: 100%;
+    height: 21px;
+    background-image: url('../assets/images/Kennaline Web_navbar_contacto.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Hero Section 1 */
+  .hero {
+    width: 100%;
+    min-height: 172px;
+    position: relative;
+    overflow: visible;
+    background-color: #000;
+  }
+  
+  .hero-banner-top-left-wrapper {
+    position: absolute;
+    display: flex;
+    top: 120px;
+    width: 864px;
+    height: 104px;
+  }
+  
+  .hero-banner-top-left {
+    left: 0;
+    width: 864px;
+    height: 104px;
+    padding-left: 82.5px;
+    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_banner_top_left_bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-banner-top-left-text {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 58px;
+    font-weight: 800;
+    margin-left: 37px;
+    color: #000;
+  }
+  
+  /* Hero Text Section */
+  .hero-text-section {
+    width: 100%;
+    padding: 80px 40px 40px 40px;
+    position: relative;
+  }
+  
+  .hero-text {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: clamp(120px, calc(200 / 1200 * 100vw), 200px);
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(16px, calc(42 / 1200 * 100vw), 42px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  
+  /* Products List Section */
+  .products-list-section {
+    width: 100%;
+    padding: 0 80px 60px 80px;
+    background-color: #fff;
+  }
+  
+  .products-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  /* Product Card */
+  .product-card {
+    background: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 400/300;
+    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_product_image.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    display: block;
+  }
+  
+  .product-code {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 400/30;
+    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_product_code.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+  }
+  
+  .product-separator {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 400/4;
+    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_product_separator.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+  }
+  
+  .product-title-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 400/40;
+    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_product_title.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1080px) {
+    .hero {
+      min-height: 0;
+      height: auto;
+      aspect-ratio: 1080/172;
+      width: 100%;
+    }
+    .hero-banner-top-left-wrapper {
+      top: calc(120 / 172 * 100%);
+      width: calc(864 / 1080 * 100%);
+      height: auto;
+      aspect-ratio: 864/104;
+      position: relative;
+    }
+    .hero-banner-top-left {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 864/104;
+      padding-left: calc(82.5 / 864 * 100%);
+      display: flex;
+      align-items: center;
+    }
+    .hero-banner-top-left-text {
+      font-size: calc(58 / 864 * 80vw);
+      margin-left: calc(37 / 864 * 80vw);
+    }
+  }
+  
+  @media (max-width: 768px) {
+  
+    .hero-text-section {
+      padding: 60px 20px 20px 20px;
+    }
+  
+    .hero-text {
+      height: clamp(100px, calc(200 / 1200 * 100vw), 200px);
+      min-height: 100px;
+      font-size: clamp(14px, calc(42 / 1200 * 100vw), 42px);
+    }
+  
+    .products-list-section {
+      padding: 0 40px 40px 40px;
+    }
+  
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  
+    .product-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      aspect-ratio: 400/300;
+    }
+  }
+  
