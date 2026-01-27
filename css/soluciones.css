@@ -22,8 +22,6 @@
   height: 50px;
 }
 
-
-
 .main-nav {
   top: 0;
 }
@@ -87,30 +85,25 @@
 
 /* Hero Section 2 */
 .hero2 {
-  background-color: white;
-  bottom: 0;
   width: 100%;
-  height: 60svh;
-  z-index: 5;
+  padding: 0 100px 100px 100px;
+  position: relative;
 }
 
 .hero2-floating-wrapper {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(64%);
+  transform: translateX(-50%) translateY(-50%);
   width: calc(100% - 140px);
-  height: 80svh;
   z-index: 5;
 }
 
-.hero-banner-center-bottom-wrapper {
-  height: 138px;
-  transform: translateY(50%);
-  z-index: 3;
+.hero2-banner-center-bottom-wrapper {
+  padding: 100px;
 }
 
-.hero-banner-center-bottom {
+.hero2-banner-center-bottom {
   position: relative;
   display: flex;
   align-items: center;
@@ -124,7 +117,7 @@
   z-index: 4;
 }
 
-.hero-banner-center-bottom-text {
+.hero2-banner-center-bottom-text {
   width: 864px;
   height: 45px;
   background-image: url('../assets/images/soluciones/Kennaline Web_hero_banner_center_bottom_text.png');
@@ -137,20 +130,50 @@
 
 .hero2-content {
   display: flex;
-  padding: 120px clamp(50px, 6vw, 120px) 100px clamp(50px, 6vw, 120px);
   background-color: black;
-  height: calc(100% - 140px);
+  padding: 100px 40px 40px 40px;
   width: 100%;
+  position: relative;
+  z-index: 4;
+  margin-top: -200px;
 }
 
 .hero2-text {
   flex: 1;
   height: 100%;
-  max-height: 388px;
-  background-image: url('../assets/images/soluciones/Kennaline Web_hero2_text.png');
-  background-size: contain;
-  background-position: top center;
-  background-repeat: no-repeat;
+  max-height: 548px;
+  display: flex;  
+  justify-content: center;
+  gap: clamp(40px, calc(60 / 1200 * 100vw), 60px);
+}
+
+.hero2-text-page1, .hero2-text-page2 {
+  width: 50%;
+  max-width: 635px;
+  min-width: 0;
+}
+
+.hero2-text-mobile {
+  width: 100%;
+  max-width: 635px;
+  min-width: 0;
+}
+
+.hero2-text-mobile {
+  display: none;
+}
+
+.hero2-text-page1 p,
+.hero2-text-page1 ul, 
+.hero2-text-page2 p, 
+.hero2-text-page2 ul,
+.hero2-text-mobile p,
+.hero2-text-mobile ul {
+  text-align: justify;
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: clamp(20px, calc(30 / 1440 * 100vw), 30px);
+  line-height: 1.4;
+  color: white;
 }
 
 .mobile-menu-content {
@@ -180,19 +203,17 @@
 
   .hero-overlay,
   .hero-banner-top-left-wrapper,
-  .hero-banner-center-bottom-text {
+  .hero2-banner-center-bottom-text {
     display: none;
   }
 
-  /* Ajustes del banner center-bottom para móvil */
-
-  .hero-banner-center-bottom-wrapper {
-    width: 90%;
-    transform: translateX(5%) translateY(50%);
+  /* Hero Section 2 */  
+  .hero2 {
     height: auto;
+    min-height: 0px;
   }
 
-  .hero-banner-center-bottom {
+  .hero2-banner-center-bottom {
     width: 100%;
     height: auto;
     min-height: 117px;
@@ -200,36 +221,75 @@
     background-image: url('../assets/images/soluciones/movil/Kennaline Web_hero_banner_center_bottom.png');
   }
 
-  .hero-banner-center-bottom-text {
+  .hero2-banner-center-bottom-text {
     display: none;
   }
 
-  /* Ajustes del hero2 en móvil */
-
-  .hero2 {
-    aspect-ratio: 1080/860;
-    height: auto;
-    min-height: 0px;
-  }
+  /* Reducir padding del hero2-content en móvil */
 
   .hero2-floating-wrapper {
     width: calc(100% - 40px);
     height: auto;
     padding: 0 20px;
   }
-
+  
   .hero2-content {
-    height: auto;
+    padding: 80px 40px;
+    height: 100%;
+  }
+  
+  .hero2-text {
+    align-items: center;
+    max-height: none;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero2-text-page1, .hero2-text-page2 {
+    display: none;
+  }
+
+  .hero2-text-mobile {
+    display: block;
+  }
+  
+  .hero2-text-mobile p,
+  .hero2-text-mobile ul {
+    font-size: clamp(16px, calc(24 / 1080 * 100vw), 24px);
+  }
+}
+
+@media (max-width: 768px) {  
+  .hero2 {
+    height: 100%;
+    padding: 0 40px 40px 40px;
     min-height: 0px;
-    aspect-ratio: 968/896; 
-    background-image: url('../assets/images/soluciones/movil/Kennaline Web_hero2_content.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 100px 20px 20px 20px;
+ }
+
+  .hero2-floating-wrapper {
+    width: calc(100% - 40px);
+    height: auto;
+    padding: 0 20px;
+  }
+  
+  .hero2-banner-center-bottom-wrapper {
+    padding: 40px;
+  }
+  
+  .hero2-content {
+    padding: 60px 40px 40px 40px;
+    height: 100%;
+    min-height: 0px;
   }
 
   .hero2-text {
-    display: none;
+    height: 100%;
+    min-height: 0px;
+    gap: 15px;
+  }
+
+  .hero2-text-mobile p,
+  .hero2-text-mobile ul {
+    font-size: clamp(16px, calc(24 / 768 * 100vw), 24px);
   }
 }
