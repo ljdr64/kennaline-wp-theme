@@ -116,7 +116,7 @@
     width: 864px;
     height: 104px;
     padding-left: 82.5px;
-    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_banner_top_left_bg.png');
+    background-image: url('../assets/images/productos/Kennaline Movil_banner_top_left_bg.png');
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
@@ -127,9 +127,9 @@
   
   .hero-banner-top-left-text {
     font-family: 'Saira Condensed', sans-serif;
-    font-size: 58px;
+    font-size: 54px;
     font-weight: 800;
-    margin-left: 37px;
+    margin-left: 20px;
     color: #000;
   }
   
@@ -180,48 +180,29 @@
     width: 400px;
   }
   
-  .product-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 400/300;
-    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_product_image.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 15px;
-    display: block;
-  }
-  
-  .product-code {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 400/30;
-    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_product_code.png');
-    background-size: contain;
-    background-position: left center;
-    background-repeat: no-repeat;
-    margin-bottom: 10px;
+  /* Estilos para product-code cuando muestra texto (SKU) */
+  .woocommerce .product-code {
+    font-family: 'Saira Condensed', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    color: #000 !important;
+    background-image: none !important;
+    aspect-ratio: auto !important;
+    height: auto !important;
+    padding: 8px 0 !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
   }
   
   .product-separator {
     width: 100%;
     height: auto;
     aspect-ratio: 400/4;
-    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_product_separator.png');
+    background-image: url('../assets/images/productos/Kennaline Movil_product_separator.png');
     background-size: contain;
     background-position: left center;
     background-repeat: no-repeat;
     margin-bottom: 15px;
-  }
-  
-  .product-title-img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 400/40;
-    background-image: url('../assets/images/productos/fresado/fresas-integrales-metal-duro/Kennaline Movil_product_title.png');
-    background-size: contain;
-    background-position: left center;
-    background-repeat: no-repeat;
   }
   
   /* Responsive */
@@ -248,8 +229,8 @@
       align-items: center;
     }
     .hero-banner-top-left-text {
-      font-size: calc(58 / 864 * 80vw);
-      margin-left: calc(37 / 864 * 80vw);
+      font-size: calc(54 / 864 * 80vw);
+      margin-left: calc(20 / 864 * 80vw);
     }
   }
   
@@ -281,4 +262,204 @@
       aspect-ratio: 400/300;
     }
   }
+
+/* ===============================
+   ESTILOS WOOCOMMERCE
+================================ */
+.page-content .woocommerce {
+  width: 100%;
+  padding: 40px 80px 60px 80px;
+  background-color: #fff;
+}
+
+.woocommerce-result-count {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 16px !important;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.woocommerce-ordering {
+  margin-bottom: 30px;
+}
+
+.woocommerce-ordering select.orderby {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 16px !important;
+  font-weight: 400;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.woocommerce-ordering select.orderby:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.products .product {
+  background: transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+.woocommerce-LoopProduct-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+/* Imagen del producto - solo la imagen principal */
+.woocommerce-LoopProduct-link img.attachment-woocommerce_thumbnail {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 400/300 !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin-bottom: 15px !important;
+}
+
+/* Separador en el loop de productos - entre SKU y título */
+.woocommerce-LoopProduct-link img.product-separator-img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 400/4 !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  display: block !important;
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.product-sku {
+  font-family: 'Saira Condensed', sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  color: #666 !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  width: 100%;
+}
+
+.product-sku strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.woocommerce-loop-product__title {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 26px !important;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+/* SKU en el loop de productos - debe aparecer después del título */
+.products .product .product-code {
+  font-family: 'Saira Condensed', sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  color: #666 !important;
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+  width: 100% !important;
+  background-image: none !important;
+  aspect-ratio: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.woocommerce .button.product_type_simple {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 16px !important;
+  font-weight: 500;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.woocommerce .button.product_type_simple:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.woocommerce .button.product_type_simple:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive WooCommerce */
+@media (max-width: 1080px) {
+  .page-content .woocommerce {
+    padding: 40px 40px 40px 40px;
+  }
+
+  .woocommerce-loop-product__title {
+    font-size: 24px !important;
+  }
+  
+  .product-sku, .products .product .product-code, .woocommerce .product-code {
+    font-size: 22px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-content .woocommerce {
+    padding: 40px 20px 40px 20px;
+  }
+
+  .products {
+    gap: 30px;
+  }
+
+  .products .product {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .woocommerce-result-count {
+    font-size: 14px !important;
+  }
+
+  .woocommerce-ordering select.orderby {
+    font-size: 14px !important;
+    width: 100%;
+  }
+
+  .woocommerce-loop-product__title {
+    font-size: 22px !important;
+  }
+
+  .product-sku, .products .product .product-code, .woocommerce .product-code {
+    font-size: 20px !important;
+  }
+
+
+  .woocommerce .button.product_type_simple {
+    font-size: 14px !important;
+    padding: 8px 16px;
+    width: 100%;
+    text-align: center;
+  }
+}
   

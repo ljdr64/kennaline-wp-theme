@@ -114,13 +114,46 @@ function kennaline_page_styles() {
         );
     }
 
-    if (is_page('fresas-integrales-metal-duro')) {
-        wp_enqueue_style(
-            'fresas-integrales-metal-duro-style',
-            get_template_directory_uri() . '/css/fresas-integrales-metal-duro.css',
-            ['kennaline-main-style'], // Dependencia: se carga después del CSS principal
-            '1.0'
-        );
+    // CSS por categoría de producto (WooCommerce)
+    if (is_product_category()) {
+        $category = get_queried_object();
+        $category_slug = $category->slug;
+        
+        // Mapeo de slugs de subcategorías a sus archivos CSS
+        $category_css_map = [
+            // PERFORADO
+            'brocas-integrales-de-metal-duro' => 'categoria-producto',
+            'brocas-modulares' => 'categoria-producto',
+            'brocas-con-insertos-intercambiables' => 'categoria-producto',
+            
+            // FRESADO
+            'fresas-integrales-de-metal-duro' => 'categoria-producto',
+            'fresas-de-planeado' => 'categoria-producto',
+            'fresas-de-escuadrado' => 'categoria-producto',
+            'fresas-de-alto-avance' => 'categoria-producto',
+            
+            // TORNEADO
+            'torneado-interior' => 'categoria-producto',
+            'torneado-exterior' => 'categoria-producto',
+            'ranurado-y-tronzado' => 'categoria-producto',
+            'perfilado-de-precision' => 'categoria-producto',
+            
+            // ROSCADO
+            'torneado-de-rosca' => 'categoria-producto',
+            'fresado-de-rosca' => 'categoria-producto',
+            'roscado-con-machos' => 'categoria-producto',
+        ];
+        
+        // Cargar CSS si existe para esta categoría
+        if (isset($category_css_map[$category_slug])) {
+            $css_file = $category_css_map[$category_slug];
+            wp_enqueue_style(
+                $css_file . '-category-style',
+                get_template_directory_uri() . '/css/' . $css_file . '.css',
+                ['kennaline-main-style'],
+                '1.0'
+            );
+        }
     }
     
     if (is_page('servicios')) {
@@ -170,3 +203,162 @@ function kennaline_page_scripts() {
     // }
 }
 add_action('wp_enqueue_scripts', 'kennaline_page_scripts');
+
+
+/* ===============================
+   WOOCOMMERCE: MOSTRAR SKU EN PÁGINA INDIVIDUAL DEL PRODUCTO
+================================ */
+add_action('woocommerce_single_product_summary', function () {
+    global $product;
+    if ($product && $product->get_sku()) {
+        echo '<p class="product-code">COD. ' . esc_html($product->get_sku()) . '</p>';
+    }
+}, 6);
+
+/* ===============================
+   WOOCOMMERCE: AGREGAR HERO EN CATEGORÍAS DE PRODUCTOS
+================================ */
+function kennaline_product_category_hero() {
+    // Detectar por URL o por categoría de WooCommerce
+    $current_url = $_SERVER['REQUEST_URI'];
+    $is_category_page = false;
+    $category_slug = '';
+    
+    // Verificar si es una categoría de WooCommerce
+    if (is_product_category()) {
+        $category = get_queried_object();
+        $category_slug = $category->slug;
+        $is_category_page = true;
+    }
+    // Verificar si la URL contiene /kennaline/categoria-producto/
+    elseif (strpos($current_url, '/kennaline/categoria-producto/') !== false) {
+        // Extraer el slug de la URL
+        $url_parts = explode('/kennaline/categoria-producto/', $current_url);
+        if (isset($url_parts[1])) {
+            $category_slug = trim($url_parts[1], '/');
+            $is_category_page = true;
+        }
+    }
+    
+    if (!$is_category_page || empty($category_slug)) {
+        return;
+    }
+    
+    // Array con datos mockeados por categoría
+    $category_data = [
+        // PERFORADO
+        'brocas-integrales-de-metal-duro' => [
+            'title' => 'Brocas Integrales de Metal Duro',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'brocas-modulares' => [
+            'title' => 'Brocas Modulares',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'brocas-con-insertos-intercambiables' => [
+            'title' => 'Brocas con Insertos Intercambiables',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        // FRESADO
+        'fresas-integrales-de-metal-duro' => [
+            'title' => 'Fresas Integrales de Metal Duro',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'fresas-de-planeado' => [
+            'title' => 'Fresas de Planeado',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'fresas-de-escuadrado' => [
+            'title' => 'Fresas de Escuadrado',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'fresas-de-alto-avance' => [
+            'title' => 'Fresas de Alto Avance',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        // TORNEADO
+        'torneado-interior' => [
+            'title' => 'Torneado Interior',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'torneado-exterior' => [
+            'title' => 'Torneado Exterior',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'ranurado-y-tronzado' => [
+            'title' => 'Ranurado y Tronzado',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'perfilado-de-precision' => [
+            'title' => 'Perfilado de Precisión',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        // ROSCADO
+        'torneado-de-rosca' => [
+            'title' => 'Torneado de Rosca',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'fresado-de-rosca' => [
+            'title' => 'Fresado de Rosca',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+        'roscado-con-machos' => [
+            'title' => 'Roscado con Machos',
+            'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.'
+        ],
+    ];
+    
+    // Obtener datos del array o usar valores por defecto
+    if (isset($category_data[$category_slug])) {
+        $title = $category_data[$category_slug]['title'];
+        $description = $category_data[$category_slug]['description'];
+    } else {
+        // Valores por defecto si no se encuentra la categoría
+        $title = 'Categoría de Producto';
+        $description = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem tenetur reprehenderit excepturi praesentium nihil temporibus, minus a repellat repudiandae asperiores hic debitis ipsam, laudantium vel. Tempora facilis doloremque consequuntur rerum.';
+    }
+    
+    ?>
+    <div class="category-product-hero">
+    <!-- Hero Section 1 -->
+    <section class="hero">
+        <div class="hero-banner-top-left-wrapper">
+            <div class="hero-banner-top-left">
+                <div class="hero-banner-top-left-text">
+                    <?php echo esc_html($title); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Text Section -->
+    <section class="hero-text-section">
+        <div class="hero-text">
+            <?php echo esc_html($description); ?>
+        </div>
+    </section>
+    </div>
+    <?php
+}
+
+/* ===============================
+   WOOCOMMERCE: MOSTRAR SKU EN LOOP DE PRODUCTOS (LISTADO) - ANTES DEL TÍTULO
+================================ */
+// Remover el título del lugar original
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+
+// Agregar SKU, separador y título en el orden correcto
+add_action('woocommerce_shop_loop_item_title', function () {
+    global $product;
+    // Mostrar SKU primero
+    if ($product) {
+        $sku = $product->get_sku();
+        if ($sku && !empty($sku)) {
+            echo '<p class="product-code">COD. ' . esc_html($sku) . '</p>';
+            // Agregar separador después del SKU
+            $separator_url = get_template_directory_uri() . '/assets/images/productos/Kennaline Movil_product_separator.png';
+            echo '<img src="' . esc_url($separator_url) . '" alt="" class="product-separator-img" style="width: 100%; height: auto; margin-top: 5px; margin-bottom: 10px;" />';
+        }
+    }
+    // Luego mostrar el título
+    echo '<h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2>';
+}, 10);
