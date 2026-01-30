@@ -32,47 +32,21 @@ if ( post_password_required() ) {
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
 	<div class="product-layout-grid">
-		<div class="product-gallery">
-			<?php
-			/**
-			 * Hook: woocommerce_before_single_product_summary.
-			 *
-			 * @hooked woocommerce_show_product_sale_flash - 10
-			 * @hooked woocommerce_show_product_images - 20
-			 */
-			do_action( 'woocommerce_before_single_product_summary' );
-			?>
-		</div>
+
 
 		<div class="product-buybox">
 			<h1 class="product-title"><?php echo esc_html( $product->get_name() ); ?></h1>
 
-			<?php if ( $product->get_sku() ) : ?>
+            <?php if ( $product->get_sku() ) : ?>
 				<p class="product-code">COD. <?php echo esc_html( $product->get_sku() ); ?></p>
 			<?php endif; ?>
-
-			<div class="product-price">
-				<?php echo $product->get_price_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-			</div>
-
+            
 			<?php
-			// Stock status
-			$stock_status = $product->get_stock_status();
-			$stock_text = '';
-			if ( $product->is_in_stock() ) {
-				$stock_quantity = $product->get_stock_quantity();
-				if ( $stock_quantity !== null ) {
-					$stock_text = sprintf( __( 'En stock (%d disponibles)', 'woocommerce' ), $stock_quantity );
-				} else {
-					$stock_text = __( 'En stock', 'woocommerce' );
-				}
-			} else {
-				$stock_text = __( 'Agotado', 'woocommerce' );
-			}
+			// Separador entre título y SKU
+			$separator_url = get_template_directory_uri() . '/assets/images/productos/Kennaline Web_producto_separator.png';
 			?>
-			<p class="product-stock stock-status-<?php echo esc_attr( $stock_status ); ?>">
-				<?php echo esc_html( $stock_text ); ?>
-			</p>
+			<img src="<?php echo esc_url( $separator_url ); ?>" alt="" class="product-separator-img" />
+
 
 			<?php
 			// Short description
@@ -88,6 +62,18 @@ if ( post_password_required() ) {
 			<?php
 			// Add to cart form
 			woocommerce_template_single_add_to_cart();
+			?>
+		</div>
+
+        <div class="product-gallery">
+			<?php
+			/**
+			 * Hook: woocommerce_before_single_product_summary.
+			 *
+			 * @hooked woocommerce_show_product_sale_flash - 10
+			 * @hooked woocommerce_show_product_images - 20
+			 */
+			do_action( 'woocommerce_before_single_product_summary' );
 			?>
 		</div>
 	</div>

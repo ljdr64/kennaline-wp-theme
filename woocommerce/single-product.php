@@ -23,6 +23,16 @@ get_header(); ?>
 
 <div class="page-content">
 	<?php
+	// Banner top right - fuera del contenedor woocommerce
+	$banner_top_right_url = get_template_directory_uri() . '/assets/images/productos/Kennaline Web_producto_banner_top_right.png';
+	?>
+	<div class="header-product">
+		<div class="product-banner-top-right">
+			<img src="<?php echo esc_url( $banner_top_right_url ); ?>" alt="" class="product-banner-top-right-img" />
+		</div>
+	</div>
+
+	<?php
 		/**
 		 * woocommerce_before_main_content hook.
 		 *

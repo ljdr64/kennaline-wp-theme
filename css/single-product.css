@@ -2,13 +2,8 @@
    ESTILOS PARA PÁGINA INDIVIDUAL DEL PRODUCTO (SINGLE PRODUCT)
 ================================ */
 
-/* Ajuste de ruta para el menú móvil desde subcarpetas */
-.mobile-menu-background {
-  background-image: url('../assets/images/movil/Kennaline Movil_menu_background.png');
-}
-
-.page-content {
-  width: 100%;
+/* Layout principal del producto */
+.single-product .page-content {
   position: relative;
 }
 
@@ -108,63 +103,51 @@
   gap: 40px;
 }
 
-/* Grid galería/buybox */
-.single-product .product-layout-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 40px;
+/* Header del producto - Banner top right (fuera del contenedor woocommerce) */
+.single-product .page-content .header-product {
+  position: relative;
+  width: 100%;
 }
 
+.single-product .page-content .header-product .product-banner-top-right {
+  position: relative;  
+  text-align: right;
+  z-index: 1;
+}
+
+.single-product .page-content .header-product .product-banner-top-right-img {
+  max-width: 700px;
+}
+
+/* Grid galería/buybox */
 .single-product .product-buybox {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  position: relative;
 }
 
 .single-product .product-buybox .product-title {
   font-family: 'Saira Condensed', sans-serif;
-  font-size: 42px;
-  font-weight: 800;
+  font-size: 60px;
+  font-weight: 600;
   color: #000;
   margin: 0 0 10px 0;
   line-height: 1.2;
 }
 
+.single-product .product-buybox .product-separator-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
 .single-product .product-buybox .product-code {
   font-family: 'Saira Condensed', sans-serif;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 400;
   color: #000;
   margin: 0;
-}
-
-.single-product .product-buybox .product-price {
-  font-family: 'Saira Condensed', sans-serif;
-  font-size: 32px;
-  font-weight: 600;
-  color: #000;
-  margin: 10px 0;
-}
-
-.single-product .product-buybox .product-price .woocommerce-Price-amount {
-  font-size: 32px;
-  font-weight: 600;
-}
-
-.single-product .product-buybox .product-stock {
-  font-family: 'Saira Condensed', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  margin: 10px 0;
-}
-
-.single-product .product-buybox .product-stock.stock-status-in-stock {
-  color: #28a745;
-}
-
-.single-product .product-buybox .product-stock.stock-status-out-of-stock {
-  color: #dc3545;
 }
 
 .single-product .product-buybox .product-short-description {
@@ -281,105 +264,6 @@
   vertical-align: top;
 }
 
-/* Contenedor principal del producto */
-.single-product .product .woocommerce-product-gallery {
-  width: 100%;
-  margin-bottom: 30px;
-}
-
-.single-product .product .woocommerce-product-gallery__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.single-product .product .woocommerce-product-gallery__image {
-  width: 100%;
-}
-
-.single-product .product .woocommerce-product-gallery__image img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Resumen del producto */
-.single-product .product .summary.entry-summary {
-  width: 100%;
-}
-
-.single-product .product .summary h1.product_title {
-  font-family: 'Saira Condensed', sans-serif;
-  font-size: 42px !important;
-  font-weight: 800;
-  color: #000;
-  margin: 0 0 20px 0;
-  line-height: 1.2;
-}
-
-.single-product .product .summary .product-code {
-  font-family: 'Saira Condensed', sans-serif !important;
-  font-size: 24px !important;
-  font-weight: 400 !important;
-  color: #000 !important;
-  margin: 0 0 20px 0;
-}
-
-.single-product .product .summary .price {
-  font-family: 'Saira Condensed', sans-serif;
-  font-size: 32px !important;
-  font-weight: 600;
-  color: #000;
-  margin: 20px 0;
-}
-
-.single-product .product .summary .woocommerce-product-details__short-description {
-  font-family: 'Saira Condensed', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #333;
-  line-height: 1.6;
-  margin: 20px 0;
-}
-
-/* Formulario de agregar al carrito */
-.single-product .product .summary form.cart {
-  margin: 30px 0;
-}
-
-.single-product .product .summary .quantity {
-  margin-bottom: 20px;
-}
-
-.single-product .product .summary .quantity input.qty {
-  font-family: 'Saira Condensed', sans-serif;
-  font-size: 18px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 80px;
-}
-
-.single-product .product .summary .single_add_to_cart_button {
-  font-family: 'Saira Condensed', sans-serif;
-  font-size: 18px !important;
-  font-weight: 500;
-  padding: 12px 30px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.single-product .product .summary .single_add_to_cart_button:hover {
-  background-color: #333;
-  color: #fff;
-}
-
 /* Ocultar sidebar en página de producto */
 .single-product #sidebar {
   display: none !important;
@@ -415,21 +299,16 @@
     padding: 40px 40px 40px 40px;
   }
 
-  .single-product .product-layout-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
   .single-product .product-buybox .product-title {
-    font-size: 36px;
+    font-size: 48px;
   }
 
-  .single-product .product-buybox .product-price {
-    font-size: 28px;
+  .single-product .product-buybox .product-code {
+    font-size: 32px;
   }
 
-  .single-product .product-buybox .product-price .woocommerce-Price-amount {
-    font-size: 28px;
+  .single-product .page-content .header-product .product-banner-top-right-img {
+    max-width: 500px;
   }
 }
 
@@ -438,25 +317,20 @@
     padding: 40px 20px 40px 20px;
   }
 
-  .single-product .product-layout-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
   .single-product .product-buybox .product-title {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   .single-product .product-buybox .product-code {
-    font-size: 20px;
-  }
-
-  .single-product .product-buybox .product-price {
     font-size: 24px;
   }
 
-  .single-product .product-buybox .product-price .woocommerce-Price-amount {
-    font-size: 24px;
+  .single-product .page-content .header-product .product-banner-top-right-img {
+    max-width: 300px;
+  }
+
+  .single-product .product-buybox .product-separator-img {
+    margin: 8px 0;
   }
 
   .single-product .product-buybox .product-short-description {
