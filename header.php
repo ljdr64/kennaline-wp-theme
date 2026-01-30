@@ -84,18 +84,3 @@
             </ul>
         </div>
     </nav>
-
-    <?php
-    $current_url = $_SERVER['REQUEST_URI'];
-    $is_category_page = false;
-    
-    if (is_product_category()) {
-        $is_category_page = true;
-    } elseif (strpos($current_url, '/kennaline/categoria-producto/') !== false) {
-        $is_category_page = true;
-    }
-    
-    if ($is_category_page && function_exists('kennaline_product_category_hero')) {
-        kennaline_product_category_hero();
-    }
-    ?>

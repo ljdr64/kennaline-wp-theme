@@ -156,6 +156,16 @@ function kennaline_page_styles() {
         }
     }
     
+    // CSS para página individual de producto (WooCommerce)
+    if (is_singular('product') || (function_exists('is_product') && is_product())) {
+        wp_enqueue_style(
+            'single-product-style',
+            get_template_directory_uri() . '/css/single-product.css',
+            ['kennaline-main-style'],
+            '1.0'
+        );
+    }
+    
     if (is_page('servicios')) {
         wp_enqueue_style(
             'servicios-style',
@@ -206,14 +216,74 @@ add_action('wp_enqueue_scripts', 'kennaline_page_scripts');
 
 
 /* ===============================
-   WOOCOMMERCE: MOSTRAR SKU EN PÁGINA INDIVIDUAL DEL PRODUCTO
+   WOOCOMMERCE: SOPORTE DEL TEMA
 ================================ */
-add_action('woocommerce_single_product_summary', function () {
-    global $product;
-    if ($product && $product->get_sku()) {
-        echo '<p class="product-code">COD. ' . esc_html($product->get_sku()) . '</p>';
+function kennaline_woocommerce_setup() {
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+}
+add_action('after_setup_theme', 'kennaline_woocommerce_setup');
+
+/* ===============================
+   WOOCOMMERCE: CONFIGURACIÓN PARA PRODUCTOS INDIVIDUALES
+================================ */
+// Configurar productos individuales: wrappers, remover elementos por defecto, etc.
+add_action('template_redirect', 'kennaline_setup_single_product');
+function kennaline_setup_single_product() {
+    if (!is_product()) {
+        return;
     }
-}, 6);
+    
+    // Remover wrappers por defecto y agregar personalizados
+    remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+    remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+    add_action('woocommerce_before_main_content', 'kennaline_wrapper_start', 10);
+    add_action('woocommerce_after_main_content', 'kennaline_wrapper_end', 10);
+    
+    // Remover breadcrumb
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+    
+    // Remover sidebar
+    remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+    
+    // Remover meta del producto
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+    
+    // Remover todas las acciones por defecto del summary para layout limpio
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+}
+
+// Remover breadcrumb en categorías de productos
+add_action('template_redirect', 'kennaline_remove_breadcrumb_categories');
+function kennaline_remove_breadcrumb_categories() {
+    if (is_product_category() || is_product_taxonomy()) {
+        remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+    }
+}
+
+function kennaline_wrapper_start() {
+    echo '<div class="woocommerce">';
+}
+
+function kennaline_wrapper_end() {
+    echo '</div>';
+}
+
+// Remover pestañas de valoraciones en productos individuales
+add_filter('woocommerce_product_tabs', 'kennaline_remove_product_tabs', 98);
+function kennaline_remove_product_tabs($tabs) {
+    if (is_product()) {
+        unset($tabs['reviews']);
+    }
+    return $tabs;
+}
 
 /* ===============================
    WOOCOMMERCE: AGREGAR HERO EN CATEGORÍAS DE PRODUCTOS

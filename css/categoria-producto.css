@@ -266,7 +266,7 @@
 /* ===============================
    ESTILOS WOOCOMMERCE
 ================================ */
-.page-content .woocommerce {
+.woocommerce-products-container {
   width: 100%;
   padding: 40px 80px 60px 80px;
   background-color: #fff;
@@ -410,7 +410,7 @@
 
 /* Responsive WooCommerce */
 @media (max-width: 1080px) {
-  .page-content .woocommerce {
+  .woocommerce-products-container {
     padding: 40px 40px 40px 40px;
   }
 
@@ -424,7 +424,7 @@
 }
 
 @media (max-width: 768px) {
-  .page-content .woocommerce {
+  .woocommerce-products-container {
     padding: 40px 20px 40px 20px;
   }
 
@@ -458,7 +458,6 @@
   .woocommerce .button.product_type_simple {
     font-size: 14px !important;
     padding: 8px 16px;
-    width: 100%;
     text-align: center;
   }
 }
