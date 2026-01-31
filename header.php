@@ -24,7 +24,7 @@
     <header class="main-header">
         <div class="header-container">
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/movil/Kennaline Movil_menu_hamburguesa.png" alt="Menú" class="hamburger-icon" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Kennaline Movil_movil_menu_hamburguesa.png" alt="Menú" class="hamburger-icon" />
             </button>
             <div class="logo-container">
                 <a href="<?php echo home_url(); ?>">

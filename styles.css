@@ -132,7 +132,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/images/contacto/Kennaline Web_footer_fondo.png');
+  background-image: url('assets/images/Kennaline Web_contacto_footer_fondo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -164,7 +164,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('assets/images/contacto/Kennaline Web_footer_fondo_contacto.png');
+  background-image: url('assets/images/Kennaline Web_contacto_footer_fondo_contacto.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -175,7 +175,7 @@ body {
   width: 207.75px;
   height: 41.25px;
   margin-left: 116.25px;
-  background-image: url('assets/images/contacto/Kennaline Web_footer_contacto.png');
+  background-image: url('assets/images/Kennaline Web_contacto_footer_contacto.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -186,7 +186,7 @@ body {
   width: 461.25px;
   height: 126px;
   margin-left: 116.25px;
-  background-image: url('assets/images/contacto/Kennaline Web_footer_datos.png');
+  background-image: url('assets/images/Kennaline Web_contacto_footer_datos.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -292,7 +292,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('assets/images/movil/Kennaline Movil_menu_background.png');
+  background-image: url('assets/images/Kennaline Movil_movil_menu_background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -429,7 +429,7 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('assets/images/contacto/Kennaline Web_footer_fondo.png');
+    background-image: url('assets/images/Kennaline Web_contacto_footer_fondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -461,7 +461,7 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('assets/images/contacto/Kennaline Web_footer_fondo_contacto.png');
+    background-image: url('assets/images/Kennaline Web_contacto_footer_fondo_contacto.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -472,7 +472,7 @@ footer {
     width: 138.5px;
     height: 27.5px;
     margin-left: 77.5px;
-    background-image: url('assets/images/contacto/Kennaline Web_footer_contacto.png');
+    background-image: url('assets/images/Kennaline Web_contacto_footer_contacto.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -487,7 +487,7 @@ footer {
     width: auto;
     height: 100%;
     aspect-ratio: 307.5 / 84;
-    background-image: url('assets/images/contacto/Kennaline Web_footer_datos.png');
+    background-image: url('assets/images/Kennaline Web_contacto_footer_datos.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
